@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Compras</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Estrutura principal do aplicativo -->
+    <main class="app-shell">
+      <header class="app-header">
+        <h1>Lista de Compras</h1>
+        <p>Adicione itens e eles serão salvos automaticamente no navegador. Marque como comprado, remova o que não precisa e organize as compras do dia a dia.</p>
+        <div class="app-note">
+          <p><strong>Dica:</strong> use o botão <strong>Limpar tudo</strong> quando terminar suas compras.</p>
+          <ul class="feature-list">
+            <li>Salvamento automático</li>
+            <li>Marcar itens comprados</li>
+            <li>Design claro e fácil de usar</li>
+          </ul>
+        </div>
+      </header>
+
+      <section class="card form-card">
+        <form id="shopping-form" class="shopping-form">
+          <div class="field-group">
+            <label for="item-name">Produto</label>
+            <input id="item-name" type="text" placeholder="Ex: Arroz" autocomplete="off" required />
+          </div>
+          <div class="field-group">
+            <label for="item-quantity">Quantidade</label>
+            <input id="item-quantity" type="number" min="1" value="1" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Adicionar</button>
+        </form>
+      </section>
+
+      <section class="card list-card">
+        <div class="list-header">
+          <h2>Itens</h2>
+          <button id="clear-btn" class="btn btn-secondary">Limpar tudo</button>
+        </div>
+        <div id="empty-state" class="empty-state">
+          Nenhum item por enquanto. Adicione algo à lista.
+        </div>
+        <ul id="shopping-list" class="shopping-list"></ul>
+      </section>
+    </main>
+    <!-- Botão especial e overlay de esqueleto -->    <button id="hourglass-btn" class="hourglass-btn" type="button" title="Clique 10 vezes para tentar ver o esqueleto.">⏳</button>
+    <div id="skeleton-overlay" class="skeleton-overlay hidden" aria-hidden="true">
+      <div class="skeleton-runner">
+        <img src="https://media.tenor.com/HIAO8F0fj70AAAAj/skeleton-run.gif" alt="Esqueleto correndo" />
+      </div>
+    </div>
+
+    <script src="java.js"></script>
+  </body>
+</html>
